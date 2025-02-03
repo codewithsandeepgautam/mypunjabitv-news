@@ -1,0 +1,10 @@
+const express = require('express')
+const {getNewsByLanguage, getNewsById, getNewsByIdPress, getAllCategoriesWithNews, getAllNewsWithCategory, getNewsByLanguagePress } = require('../controllers/newsController')
+const newsRouter = express.Router()
+newsRouter.get('/getNews/:lang', getNewsByLanguage)
+newsRouter.get('/getNewspress/:lang', getNewsByLanguagePress)
+newsRouter.get('/getnews/:lang/:handle', getNewsById)
+newsRouter.get('/getNewspress/:lang/:handle', getNewsByIdPress)
+newsRouter.get('/getEverything/:lang', getAllCategoriesWithNews)
+newsRouter.get('/getSearchResults/:lang', getAllNewsWithCategory)
+module.exports = newsRouter
